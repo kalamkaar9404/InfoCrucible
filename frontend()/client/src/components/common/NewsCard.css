@@ -1,0 +1,147 @@
+/* src/components/common/NewsCard.css */
+
+.news-card {
+    background-color: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+    overflow: hidden; /* Clip image corners */
+    display: flex;
+    flex-direction: column; /* Stack image, content, actions vertically */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    height: 100%; /* Important for grid alignment */
+  }
+  
+  .news-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.16);
+  }
+  
+  .news-card-image-wrapper {
+      position: relative;
+      width: 100%;
+      /* Aspect ratio padding-bottom trick for consistent image height */
+      padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+      overflow: hidden;
+      background-color: #f0f2f5; /* Placeholder background */
+  }
+  
+  .news-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop image nicely */
+    display: block; /* Remove extra space */
+    border-bottom: 1px solid #eee; /* Optional line below image */
+  }
+  
+  .news-card-content {
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Takes up remaining vertical space */
+  }
+  
+  .news-card-source {
+      display: block;
+      font-size: 0.75rem; /* Smaller source text */
+      color: #595959;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      font-weight: 600; /* Slightly bolder */
+      letter-spacing: 0.5px;
+  }
+  
+  .news-card-title {
+    font-size: 1.1rem; /* Adjusted size */
+    font-weight: 600;
+    margin: 0 0 0.6rem 0; /* Adjusted margin */
+    color: #1f1f1f;
+    line-height: 1.35;
+    /* Limit lines using webkit-line-clamp */
+     display: -webkit-box;
+     -webkit-line-clamp: 3; /* Max 3 lines */
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     /* Ensure minimum height for consistent layout */
+     min-height: calc(1.1rem * 1.35 * 2); /* Approx 2 lines height */
+  }
+  
+  .news-card-description {
+    font-size: 0.9rem;
+    color: #434343;
+    line-height: 1.55;
+    margin-bottom: 1.2rem; /* More space before actions */
+    flex-grow: 1; /* Push actions down */
+    /* Limit lines */
+     display: -webkit-box;
+     -webkit-line-clamp: 3; /* Max 3 lines */
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     text-overflow: ellipsis;
+  }
+  
+  .news-card-actions {
+    margin-top: auto; /* Critical: pushes actions to the bottom */
+    padding-top: 0.75rem;
+    border-top: 1px solid #f0f0f0; /* Lighter separator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Base styles for action buttons/links */
+  .action-link,
+  .action-button {
+    padding: 7px 14px; /* Slightly adjusted padding */
+    border-radius: 6px;
+    font-size: 0.8rem; /* Smaller text */
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+    white-space: nowrap; /* Prevent button text wrapping */
+  }
+  
+  .action-link:hover,
+  .action-button:hover {
+    opacity: 0.85; /* Slight fade on hover */
+  }
+  
+  /* Read More link styling */
+  .read-more-link {
+    color: #0d6efd; /* Bootstrap blue */
+    background-color: transparent;
+  }
+  .read-more-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Verify button styling */
+  .verify-button {
+    color: #198754; /* Bootstrap success green */
+    background-color: #d1e7dd; /* Light green background */
+    border-color: transparent;
+  }
+  
+  .verify-button:hover {
+    background-color: #badbcc; /* Darker green background */
+  }
+  
+  /* Style for disabled verify button */
+  .verify-button:disabled {
+      background-color: #e9ecef; /* Grey background */
+      color: #6c757d; /* Grey text */
+      cursor: not-allowed;
+      opacity: 0.65;
+  }
+  .verify-button:disabled:hover {
+      background-color: #e9ecef; /* Keep grey on hover */
+      opacity: 0.65;
+  }

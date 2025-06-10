@@ -1,0 +1,32 @@
+/* client/src/components/news/DetectionResult.css */
+.detection-result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 1px solid transparent;
+  }
+  
+  .detection-result p {
+      margin: 0;
+  }
+  
+  .result-fake {
+    background-color: #f8d7da; /* Light Red */
+    color: #721c24; /* Dark Red */
+    border-color: #f5c6cb;
+  }
+  
+  .result-real {
+    background-color: #d4edda; /* Light Green */
+    color: #155724; /* Dark Green */
+    border-color: #c3e6cb;
+  }
+  
+  .result-uncertain {
+    background-color: #e2e3e5; /* Light Gray */
+    color: #383d41; /* Dark Gray */
+    border-color: #d6d8db;
+  }

@@ -1,0 +1,145 @@
+/* src/components/common/Header.css */
+
+/* --- Existing Styles --- */
+.app-header {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #002f6c, #004aad);
+    padding: 15px 30px;
+    color: #fff; /* Default color for text inside header */
+  }
+  
+  /* Styles for the <p> tag containing the logo link */
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    user-select: none;
+    margin: 0; /* Reset default paragraph margin */
+  }
+  
+  /* === ADD THIS RULE === */
+  /* Styles specifically for the Link (<a> tag) inside the .logo paragraph */
+  .logo a {
+    color: #ffffff; /* Explicitly set color to white */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  /* Optional: Hover effect for the logo link */
+  .logo a:hover {
+    /* color: #cccccc; */ /* Example: Slightly grey on hover */
+    opacity: 0.9; /* Example: Slightly fade on hover */
+    text-decoration: none; /* Ensure no underline appears on hover either */
+  }
+  /* ===================== */
+  
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0;
+    position: relative;
+  }
+  
+  /* Style for ALL navigation items (links AND the dropdown button) */
+  nav ul li a,
+  nav ul li .dropbtn {
+    display: block;
+    padding: 10px 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+  }
+  
+  /* Hover effect for regular links (excluding the dropdown button) */
+  nav ul li a:hover:not(.dropbtn) {
+    text-decoration: underline;
+  }
+  
+  /* Hover/Focus effect specifically for the dropdown button */
+  nav ul li .dropbtn:hover,
+  nav ul li .dropbtn:focus {
+     background-color: rgba(255, 255, 255, 0.1);
+     border-radius: 4px;
+     outline: none;
+     text-decoration: none;
+  }
+  
+  /* Keep the trigger highlighted when dropdown is open via hover/focus-within */
+  .dropdown:hover .dropbtn,
+  .dropdown:focus-within .dropbtn {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+  }
+  
+  /* --- Dropdown Menu Styles --- */
+  .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    margin-top: 5px;
+    background: white;
+    color: black;
+    list-style: none;
+    padding: 8px 0;
+    margin-left: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+  }
+  
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .dropdown-menu li {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu li a {
+    /* Reset styles from main nav */
+    color: black !important; /* Use !important if needed, or increase specificity */
+    font-size: 16px !important;
+    font-weight: normal !important;
+    text-align: left !important; /* Ensure left alignment */
+    background: none !important; /* Override any background from main nav button style */
+    /* Keep necessary dropdown link styles */
+    display: block;
+    padding: 10px 20px !important;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-menu li a:hover,
+  .dropdown-menu li a:focus {
+    background-color: #f0f0f0 !important; /* Use !important if needed */
+    color: #333 !important;
+    text-decoration: none !important; /* Ensure no underline on hover */
+  }

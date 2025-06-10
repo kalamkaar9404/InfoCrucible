@@ -1,0 +1,15 @@
+/* client/src/components/common/Footer.css */
+.app-footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Pushes footer to the bottom if content is short */
+    font-size: 0.9em;
+  }
+  
+  .app-footer p {
+    margin: 0;
+  }
+  
+  /* Add more specific styles if needed */

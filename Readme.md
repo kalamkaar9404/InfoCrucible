@@ -33,6 +33,7 @@ Retrieval & RAG uses Cosmos DB’s vector search (thread detection) and Azure Op
  
 Dashboard & API is your React frontend + serverless Azure Functions (for real-time link/file checks).
 
+![Alt Text](images/Picture1.png)
 
 ## Contact
 For project inquiries and support:
